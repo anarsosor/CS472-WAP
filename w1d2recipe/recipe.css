@@ -2,15 +2,19 @@ body {
     color: #404040;
     font-family: 'Georgia', 'Garamond', 'serif';
     font-size: 11pt;
+    background-image: url("recipeImages/silverware.jpg");
 }
 h1 {
     color: #A4A400;
     background-color: #F0F0F0;
     font-family: 'Lucida Sans Unicode', 'Helvetica', 'Arial', 'sans-serif';
     font-size: 22pt;
-    text-align: center;
     font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
     text-decoration: underline;
+    width: fit-content;
+    letter-spacing: 0.25em;
 }
 h2 {
     color: #A4A400;
@@ -19,17 +23,24 @@ h2 {
     font-size: 18pt;
     text-align: left;
     text-decoration: underline;
+    width: fit-content;
+    letter-spacing: 0.25em;
 }
 a {
     color: #A4A400;
 }
 .comment {
-    background-color:#e1e4339c;
+    background-color:#FFFFA8;
     font-style: italic;
     margin: auto 40px;
 }
-.copyright {
+pre {
     font-family: 'Courier New', Courier, monospace;
-    text-align: right;
-    width: 30ch;
+}
+abbr {
+    text-decoration: underline;
+    border-bottom: 1px dotted black;
+}
+s {
+    text-decoration: line-through;
 }
