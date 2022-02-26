@@ -33,7 +33,7 @@ aside {
     font-size: 8pt;
     box-sizing: border-box;
 }
-section {
+.lside {
     float: right;
     width: 550px;
     box-sizing: border-box;
