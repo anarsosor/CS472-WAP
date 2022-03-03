@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../w1d6form/webform1.css" type="text/css" rel="stylesheet" />
+    <link href="../w1d6form/webform2.css" type="text/css" rel="stylesheet" />
+    <link href="./functions.css" type="text/css" rel="stylesheet" />
+    <script src="./functions.js" defer></script>
+</head>
+<body>
+    
+    <div class="container">
+        <h4 class="clock">Show functions.js file in the same folder !</h4>
+        <!-- <form> -->
+            <div class="mb-3">
+              <label for="email1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password1" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{10,}$" title="at least 10 characters in length and contain at least one number and one uppercase and lowercase letter">
+            </div>
+            <div class="mb-3">
+                <label for="webURL" class="form-label">Website URL</label>
+                <input type="url" class="form-control" id="url1">
+              </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="check1">
+              <label class="form-check-label" for="check1">Check me out</label>
+            </div>
+            <button type="submit" id="submit1" class="btn btn-primary">Submit</button>
+        <!-- </form> -->
+    </div>
+    <hr>
+    <div class="container">
+        <form>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="productNumber" class="form-label">Product Number</label>
+                <input type="text" class="form-control" id="productNumber">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="quantity" class="form-label">Quantity in stock</label>
+                <input type="number" class="form-control" id="quantity" value="0">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="supplier" class="form-label">Supplier</label>
+                <select class="form-select" id="supplier">
+                  <option selected>Select a supplier</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 mb-3">
+                  <label for="unitPrice" class="form-label">Unit Price</label>
+                  <input type="number" class="form-control" id="unitPrice" value="0.0">
+              </div>
+              <div class="col-6 mb-3">
+                <label for="dateSupplied" class="form-label">Date supplied</label>
+                <input type="date" class="form-control" id="dateSupplied">
+                <div id="dateHelp" class="form-text">Enter a valid Date</div>
+              </div>
+            </div>
+            <div class="bts">
+              <button type="submit" class="btn btn-submit" id="submit2">Add Product</button>
+              <button type="button"  class="btn btn-cancel">Cancel</button>
+              <button type="reset" class="btn btn-reset">Reset</button>
+            </div>
+      
+          </form>
+    </div>
+    <hr>
+    <div class="clock" id="clock"></div>
+    <footer>
+		<a href="http://validator.w3.org/check?uri=referer" onclick="this.href='http://validator.w3.org/check?uri=' + document.URL">
+			<img src="../images/w3c-html.png" alt="html5-validate">
+		</a>
+		<a href="http://jigsaw.w3.org/css-validator/validator?uri=referer" onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL">
+			<img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="css-validate">
+		</a>
+	</footer>
+</body>
+</html>
