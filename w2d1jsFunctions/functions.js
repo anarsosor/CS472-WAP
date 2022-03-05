@@ -172,7 +172,7 @@ window.onload = function() {
 };
 
 // const loginForm1 = document.getElementById("loginForm1");
-// loginForm1.addEventListener("submit1", getLoginForm1);
+// loginForm1.addEventListener("submit", getLoginForm1);
 
 // 15
 const displayClock = function() {
