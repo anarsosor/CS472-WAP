@@ -1,0 +1,82 @@
+.container-fluid {
+    background-color: rgb(233, 84, 32);
+}
+.navbar-light .navbar-brand {
+    color: #f9fafb;
+    padding-right: 20pt;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #e9e9f0;
+}
+.mb-2 {
+    margin-bottom: 0.5rem!important;
+    margin-top: 0.5rem!important;
+}
+li {
+    border-left: solid 2px #e9e9f0;
+    padding-left: 20pt;
+    padding-right: 20pt;
+}
+.navbar-light .navbar-text {
+    color: #f9fafb;
+    margin-right: 10px;
+}
+.btn-outline-success {
+    color: #41464b;
+    border-color: #f8f9fa;
+    background-color: #f8f9fa;
+    height: fit-content;
+}
+.emp {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+.container {
+    width: 100%;
+}
+.image {
+    background-image: url("./hospital.png");
+    background-repeat: repeat-x;
+    height: 212px;
+    margin-bottom: 20px;
+}
+.tel {
+    text-decoration: underline;
+    color: dodgerblue;
+}
+.email {
+    color: rgb(233, 84, 32);
+}
+.bottom {
+    background-color: gainsboro;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.trademark {
+    float: right;
+}
+.buttons {
+    flex-direction: row-reverse;
+    display: flex;
+}
+.btn-reset {
+    background-color: gray;
+    color: #e9e9f0;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.btn-submit {
+    background-color: rgb(233, 84, 32);
+    color: #e9e9f0;
+    margin-left: 14px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.sidebyside {
+    display: inline-block;
+    margin-top: 5px;
+    margin-right: 18px;
+}

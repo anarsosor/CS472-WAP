@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="./master.css" type="text/css" rel="stylesheet" />
+    <title>HolyCross Medical Center</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">HolyCross Medical Center</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./patients.html">Patients</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <span class="navbar-text">Welcome, Guest</span>
+                  <!-- <button class="btn btn-outline-success" type="button">Sign Out</button> -->
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="container">
+        <legend>Patients Registration</legend>
+        <hr>
+        <form>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <label for="patientID" class="form-label">*Patient ID No:</label>
+                <input type="text" class="form-control" id="patientID" name="patientID" placeholder="EP-XXX-XXXXXX" pattern="^E?P-\d{3}-\d{6}$" required>
+                <div id="patientIDHelp" class="form-text">Enter the Patient ID Number, in the specified format</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mb-3">
+                <label for="fname" class="form-label">* First Name:</label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" required>
+                <div id="fnameHelp" class="form-text">Enter the Patient's First Name</div>
+            </div>
+            <div class="col-4 mb-3">
+                <label for="mname" class="form-label">Middle Initial(s):</label>
+                <input type="text" class="form-control" id="mname" name="mname" placeholder="Enter Middle Initial(s)">
+            </div>
+            <div class="col-4 mb-3">
+                <label for="lname" class="form-label">* Last Name:</label>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name" required>
+                <div id="lnameHelp" class="form-text">Enter the Patient's Last Name</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 mb-3">
+                <label for="dateBirth" class="form-label">*Date of birth:</label>
+                <input type="date" class="form-control" id="dateBirth" name="dateBirth" required>
+                <div id="dateBirthHelp" class="form-text">Enter the Patient's Date of Birth</div>
+                </div>
+            <div class="col-4 mb-3">
+                <label for="department" class="form-label">*Department</label>
+                <select class="form-select" id="department" name="department" required>
+                    <option selected>Select...</option>
+                    <option value="1">Cardiology</option>
+                    <option value="2">Ear, Nose and Throat</option>
+                    <option value="3">Primary Care</option>
+                    <option value="3">[Unassigned]</option>
+                </select>
+                <div id="departmentHelp" class="form-text">Select the department providing care</div>
+            </div>
+            <div class="col-4 mb-3">
+                <label for="outPatient" class="form-label">*Is this an Out-patient?</label>
+                    <br>
+                    <div class="sidebyside">
+                        <input type="radio" name="outPatient" id="yes" value="yes" required>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div class="sidebyside">
+                        <input type="radio" name="outPatient" id="no" value="no" required>
+                        <label for="no">No</label>
+                    </div>
+            </div>
+            </div>
+            <div class="buttons">
+                <button type="submit" class="btn btn-submit" id="registerbtn">Register Patient</button>
+                <button type="reset" class="btn btn-reset" id="resetbtn">Reset</button>
+            </div>
+        </form>
+        <div class="sidebyside">
+            <input type="checkbox" name="elderly" id="elderly" checked>
+            <label for="elderly">Show Elderly Patients only</label>
+        </div>
+        <div class="sidebyside">
+            <input type="checkbox" name="outp" id="outp">
+            <label for="outp">Show Out-Patient only</label>
+        </div>
+        <hr>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Patient ID No</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Middle Initial(s)</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Date of birth</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Out-patient?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>P-001-000001</td>
+                        <td>Ana</td>
+                        <td>J</td>
+                        <td>Smith</td>
+                        <td>1955-05-05</td>
+                        <td>Ear, Nose and Throat</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>EP-001-000002</td>
+                        <td>Bob</td>
+                        <td>K</td>
+                        <td>Jones</td>
+                        <td>1955-05-04</td>
+                        <td>Cardiology</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bottom">
+        O.Kalu:::CS472-WAP<span class="trademark">HCMC&copy; May 2020</span>
+        <a href="http://validator.w3.org/check?uri=referer" onclick="this.href='http://validator.w3.org/check?uri=' + document.URL">
+            <img src="../images/w3c-html.png" alt="html5-validate">
+        </a>
+        <a href="http://jigsaw.w3.org/css-validator/validator?uri=referer" onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL">
+            <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="css-validate">
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

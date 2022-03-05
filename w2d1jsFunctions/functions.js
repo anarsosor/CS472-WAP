@@ -75,17 +75,20 @@ const filterLongWords = function(arrayOfWords, i) {
 // console.log(filterLongWords(words,5));
 
 // 8.
+// const computeSumOfSquares = arrayOfNumbers => arrayOfNumbers
+//         .map(el => el*el)
+//         .reduce((acc, el) => acc + el);
+// OR
 const computeSumOfSquares = arrayOfNumbers => arrayOfNumbers
-        .map(el => el*el)
-        .reduce((acc, el) => acc + el);
-
+        .reduce((acc, el) => acc + el*el);
+        
 var numbers=[1,2,3,4,5];
 // console.log(computeSumOfSquares(numbers));
 
 // 9.
 const printOddNumbersOnly = arrayOfNumbers => arrayOfNumbers
         .filter(el => el%2==1);
-// printOddNumbersOnly(numbers).forEach(el => console.log(el));
+// sprintOddNumbersOnly(numbers).forEach(el => console.log(el));
 
 // 10.
 const computeSumOfSquaresOfEvensOnly = arrayOfNumbers => arrayOfNumbers
@@ -167,6 +170,9 @@ window.onload = function() {
 
     setInterval(displayClock, 1000);
 };
+
+// const loginForm1 = document.getElementById("loginForm1");
+// loginForm1.addEventListener("submit1", getLoginForm1);
 
 // 15
 const displayClock = function() {
