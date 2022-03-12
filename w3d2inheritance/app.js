@@ -28,6 +28,11 @@ let month = dateOfBirth.getMonth() + 1;
 let day = dateOfBirth.getDate();
 console.log(`${john.getName()} was born on ${year}-${month}-${day}`);
 
+// console.log(`The person's name is ${john.name}\n${john.name} was born on ${john.dateOfBirth}`);
+// console.log(`The person's name is ${john.getName()}\n${john.getName()} was born on ${new Intl.DateTimeFormat().format(john.dateOfBirth)}`);
+// console.log(`The person's name is ${john.getName()}\n${john.getName()} was born on ${john.dateOfBirth.toISOString()}`);
+// console.log(`The person's name is ${john.name}\n${john.getName()} was born on ${john.dateOfBirth.getFullYear()}-${john.dateOfBirth.getMonth()+1}-${john.dateOfBirth.getDate()}`);
+
 // Task 2
 let employee = Object.create(person);
 employee.salary = 0.0;
