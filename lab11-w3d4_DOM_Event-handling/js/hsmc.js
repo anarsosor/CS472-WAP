@@ -44,13 +44,11 @@ $(document).ready(function() {
     });
 
     $("input:checkbox").on("click", function(event) {
-        // console.log(event.target);
         clearTable();
         const chkElderlyPatients = $("#chkElderlyPatients").is(':checked');
         const chkShowOutPatients = $("#chkShowOutPatients").is(':checked');
         patientsData.filter(n => (!chkElderlyPatients || getAge(n.getDateOfBirth()) >= 65) && (!chkShowOutPatients || n.getIsOutPatient()=="Yes"))
                     .forEach(n => createPatient(n));
-        // console.log(patientsData);
     });
 
     function getAge(dateString) {
