@@ -73,12 +73,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    -var i =1;
                     for account in accounts
                         tr
-                            td #{account.accountId}
+                            td #{i}
                             td #{account.accountNo}
                             td #{account.customerName}
                             td #{account.accountType}
+                        -i++;
                     </tr>
                 </tbody>
             </table>
