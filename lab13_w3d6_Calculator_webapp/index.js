@@ -12,12 +12,12 @@ const app = express();
  // setup the express HttpRequest data parser middleware
  app.use(express.urlencoded({ extended: false }));
 
-app.get("/",(req, res, next) => {
+app.get("/",(req, res) => {
     console.log(`Calculator Form`);
     res.sendFile(path.join(__dirname, "views", "calc-form.html"));
 });
 
-app.post("/calc", (req, res, next) => {
+app.post("/calc", (req, res) => {
     console.log(`In the calc middleware`);
     console.log(`first: ${req.body.first}`);
     console.log(`second: ${req.body.second}`);
@@ -29,7 +29,7 @@ app.post("/calc", (req, res, next) => {
     
 });
 
-app.get("/confirm-calc",(req, res, next) => {
+app.get("/confirm-calc",(req, res) => {
     console.log(`In the confirm-calc middleware`);
     const first = parseFloat(req.query.first);
     const second = parseFloat(req.query.second);
@@ -46,6 +46,8 @@ app.get("/confirm-calc",(req, res, next) => {
             break;
         case `div`:
             result /= second;
+            break;
+        default:
             break;
     }
     const content = `
