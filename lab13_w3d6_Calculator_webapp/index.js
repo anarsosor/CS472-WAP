@@ -19,37 +19,35 @@ app.get("/",(req, res) => {
 
 app.post("/calc", (req, res) => {
     console.log(`In the calc middleware`);
-    console.log(`first: ${req.body.first}`);
-    console.log(`second: ${req.body.second}`);
-    console.log(`operator: ${req.body.operator}`);
+    console.log(`${req.body.first} ${req.body.operator} ${req.body.second} = ?`);
 
-    const queryString = `first=${req.body.first}&second=${req.body.second}&operator=${req.body.operator}`;
-    const redirectUrl = `/confirm-calc?${queryString}`;
+    const first = parseFloat(req.body.first);
+    const second = parseFloat(req.body.second);
+    const op = req.body.operator;
+    let result = first;
+    switch(op) {
+        case `+`:
+            result += second;
+            break;
+        case `-`:
+            result -= second;
+            break;
+        case `*`:
+            result *= second;
+            break;
+        case `/`:
+            result /= second;
+            break;
+        default:
+            break;
+    }
+    const redirectUrl = `/confirm-calc?result=${result}`;
     res.redirect(303, redirectUrl);
     
 });
 
 app.get("/confirm-calc",(req, res) => {
     console.log(`In the confirm-calc middleware`);
-    const first = parseFloat(req.query.first);
-    const second = parseFloat(req.query.second);
-    let result = first;
-    switch(req.query.operator) {
-        case `add`:
-            result += second;
-            break;
-        case `sub`:
-            result -= second;
-            break;
-        case `mul`:
-            result *= second;
-            break;
-        case `div`:
-            result /= second;
-            break;
-        default:
-            break;
-    }
     const content = `
         <!DOCTYPE html>
         <html>
@@ -57,7 +55,7 @@ app.get("/confirm-calc",(req, res) => {
                 <title>Calculator webapp</title>
             </head>
             <body>
-                <h1>The Answer is: ${String(result)}</h1>
+                <h1>The Answer is: ${String(req.query.result)}</h1>
                 <a href="/">Another calculation</a>
             </body>
         </html>

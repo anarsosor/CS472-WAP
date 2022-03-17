@@ -22,14 +22,7 @@ $(document).ready(function() {
         const ddlDepartment = $("#ddlDepartment").val();
         const isOutPatient = $("input:radio[name=radioIsOutPatient]:checked").val();
 
-        // const patientData = `Patient ID No: ${patientIdNumber}, First Name: ${firstName}, Middle Initial(s): ${middleInitials}, Last Name: ${lastName}, Date of birth: ${dateOfBirth}, Department: ${ddlDepartment}, Is Out-patient: ${isOutPatient}`;
-
-        // alert(patientData);
-
         const newPatient = new Patient(patientIdNumber, firstName, middleInitials, lastName, dateOfBirth, ddlDepartment, isOutPatient);
-
-        // alert(newPatient.toString());
-        
         patientsData.push(newPatient);
 
         createPatient(newPatient);
@@ -63,45 +56,60 @@ $(document).ready(function() {
     }
 
     function clearTable() {
-        const tblPatients = document.querySelector("#tbodyPatientsList");
-        tblPatients.innerHTML = '';
+        // const tblPatients = document.querySelector("#tbodyPatientsList");
+        // tblPatients.innerHTML = '';
+        $("#tbodyPatientsList").empty();
         console.log("table cleared");
     }
 
     function createPatient(newPatient) {
-        const tblPatients = document.querySelector("#tbodyPatientsList");
-        const newRow = tblPatients.insertRow(-1);
-
-        const newCellPatientId = newRow.insertCell(0);
-        const strNewPatientId = document.createTextNode(`${newPatient.getPatientIdNumber()}`);
-        newCellPatientId.appendChild(strNewPatientId);
-
-        const newCellFirstName = newRow.insertCell(1);
-        const strNewFirstName = document.createTextNode(`${newPatient.getFirstName()}`);
-        newCellFirstName.appendChild(strNewFirstName);
-
-        const newCellMiddleInitials = newRow.insertCell(2);
-        const strNewMiddleInitials = document.createTextNode(`${newPatient.getMiddleInitials()}`);
-        newCellMiddleInitials.appendChild(strNewMiddleInitials);
-
-        const newCellLastName = newRow.insertCell(3);
-        const strNewLastName = document.createTextNode(`${newPatient.getLastName()}`);
-        newCellLastName.appendChild(strNewLastName);
-
-        const newCellDateOfBirth = newRow.insertCell(4);
-        const strNewDateOfBirth = document.createTextNode(`${newPatient.getDateOfBirth()}`);
-        newCellDateOfBirth.appendChild(strNewDateOfBirth);
-
-        const newCellDdlDepartment = newRow.insertCell(5);
-        const strNewDdlDepartment = document.createTextNode(`${newPatient.getDdlDepartment()}`);
-        newCellDdlDepartment.appendChild(strNewDdlDepartment);
-
-        const newCellIsOutPatient = newRow.insertCell(6);
-        const strNewIsOutPatient = document.createTextNode(`${newPatient.getIsOutPatient()}`);
-        newCellIsOutPatient.appendChild(strNewIsOutPatient);
-
-        console.log("Patient created");
+        $("#tbodyPatientsList").append(`
+            <tr>
+                <td>${newPatient.getPatientIdNumber()}</td>
+                <td>${newPatient.getFirstName()}</td>
+                <td>${newPatient.getMiddleInitials()}</td>
+                <td>${newPatient.getLastName()}</td>
+                <td>${newPatient.getDateOfBirth()}</td>
+                <td>${newPatient.getDdlDepartment()}</td>
+                <td>${newPatient.getIsOutPatient()}</td>
+            </tr>
+        `);
+        console.log("Patient inserted in table");
     }
 
+    // function createPatient(newPatient) {
+    //     const tblPatients = document.querySelector("#tbodyPatientsList");
+    //     const newRow = tblPatients.insertRow(-1);
+
+    //     const newCellPatientId = newRow.insertCell(0);
+    //     const strNewPatientId = document.createTextNode(`${newPatient.getPatientIdNumber()}`);
+    //     newCellPatientId.appendChild(strNewPatientId);
+
+    //     const newCellFirstName = newRow.insertCell(1);
+    //     const strNewFirstName = document.createTextNode(`${newPatient.getFirstName()}`);
+    //     newCellFirstName.appendChild(strNewFirstName);
+
+    //     const newCellMiddleInitials = newRow.insertCell(2);
+    //     const strNewMiddleInitials = document.createTextNode(`${newPatient.getMiddleInitials()}`);
+    //     newCellMiddleInitials.appendChild(strNewMiddleInitials);
+
+    //     const newCellLastName = newRow.insertCell(3);
+    //     const strNewLastName = document.createTextNode(`${newPatient.getLastName()}`);
+    //     newCellLastName.appendChild(strNewLastName);
+
+    //     const newCellDateOfBirth = newRow.insertCell(4);
+    //     const strNewDateOfBirth = document.createTextNode(`${newPatient.getDateOfBirth()}`);
+    //     newCellDateOfBirth.appendChild(strNewDateOfBirth);
+
+    //     const newCellDdlDepartment = newRow.insertCell(5);
+    //     const strNewDdlDepartment = document.createTextNode(`${newPatient.getDdlDepartment()}`);
+    //     newCellDdlDepartment.appendChild(strNewDdlDepartment);
+
+    //     const newCellIsOutPatient = newRow.insertCell(6);
+    //     const strNewIsOutPatient = document.createTextNode(`${newPatient.getIsOutPatient()}`);
+    //     newCellIsOutPatient.appendChild(strNewIsOutPatient);
+
+    //     console.log("Patient created");
+    // }
 
 });
